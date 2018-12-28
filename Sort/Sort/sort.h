@@ -7,7 +7,7 @@
 using namespace std;
 
 
-#define __TESTCASE__
+#define __TESTCASE__ // 주석처리하면 정렬 과정마다 Print하는 부분을 생략함
 #ifndef __TESTCASE__
 #define PRINT_TESTCASE(ARRAY,N1,N2) {}
 #else
