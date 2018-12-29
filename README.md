@@ -81,7 +81,7 @@
  
  ## 📌 정렬 알고리즘 비교
  
-    [![Visualization and Comparison of Sorting Algorithms](https://github.com/kbm0996/Sort/blob/master/picture/videothumbnail.JPG?raw=true)](https://youtu.be/ZZuD6iUe3Pc?t=0s)
+ [![Visualization and Comparison of Sorting Algorithms](https://github.com/kbm0996/Sort/blob/master/picture/videothumbnail.JPG?raw=true)](https://youtu.be/ZZuD6iUe3Pc?t=0s)
 
   **video 1. Visualization and Comparison of Sorting Algorithms (image click!)*
 
