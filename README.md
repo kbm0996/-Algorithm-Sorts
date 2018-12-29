@@ -6,41 +6,101 @@
  1. 출력은 비 내림차순(각각의 원소가 전순서에 의해 이전의 원소보다 작지 않은 순서)이다.
  2. 출력은 입력을 재배열하여 만든 순열이다.
  
- (출처:https://ko.wikipedia.org/wiki/정렬_알고리즘)
+ (출처 : https://ko.wikipedia.org)
  
  
- ## 🅿 해당 프로그램에서 다룬 
+ ## 🅿 주요 소스 코드
+ ### 1. 버블 정렬 
+  두 인접한 원소를 검사하여 정렬하는 방법이다. 시간 복잡도가 O(n^{2})로 상당히 느리지만, 코드가 단순하기 때문에 자주 사용된다. 원소의 이동이 거품이 수면으로 올라오는 듯한 모습을 보이기 때문에 지어진 이름이다.
   
-   ![Insertion Sort](https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif)
+  - 예제
+  
+        [55][07] 78  12  42  초기값[sorting]
+         07 (55)(78) 12  42  첫 번째 패스(pass)
+         07  55 [78][12] 42
+         07  55  12 [78][42]
+        (07)(55) 12  42  78  두 번째 패스(pass)
+         07 [55][12] 42  78
+         07  12 [55][42] 78
+        (07)(12) 42  55  78  세 번째 패스(pass)
+         07 (12)(42) 55  78  네 번째 패스(pass)
+         07  12 (42)(55) 78  다섯 번째 패스(pass)
+         07  12  42  55  78  정렬 끝
+  
+  - 의사 코드
+  
+        procedure bubbleSort( A : list of sortable items ) defined as:
+          for each i in 1 to length(A) do:
+               for each j in length(A) downto i + 1 do:
+                 if A[ j ] < A[ j - 1 ] then
+                   swap( A[ j ],  A[ j - 1 ] )
+                 end if
+               end for
+          end for
+        end procedure
+        
+    ![Insertion Sort](https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif)
 
-  **figure 1. Bubble Sort*
+    **figure 1. Bubble Sort*
 
+
+ ### 2. 삽입 정렬 
+ 삽입 정렬(揷入整列, insertion sort)은 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘이다.
+ 
+  - 예제
+  
+         31	 25 	12 	22 	11			처음 상태
+         31	[25]	12	 22 	11		 	두 번째 원소를 부분 리스트에서 적절한 위치에 삽입한다.
+        <25>	31	[12]	22	 11		 	세 번째 원소를 부분 리스트에서 적절한 위치에 삽입한다.
+        <12>	25	 31	[22]	11		 	네 번째 원소를 부분 리스트에서 적절한 위치에 삽입한다.
+         12	<22>	25	 31	[11]		 	마지막 원소를 부분 리스트에서 적절한 위치에 삽입한다.
+        <11>	12	 22	 25	 31		 	종료.
+ 
    ![Insertion Sort](http://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
 
-  **figure 2. Insertion Sort*
+   **figure 2. Insertion Sort*
+
+
+ ### 3. 퀵 정렬 
+퀵 정렬은 분할 정복(divide and conquer) 방법을 통해 리스트를 정렬한다.
+
+ 1. 리스트 가운데서 하나의 원소를 고른다. 이렇게 고른 원소를 피벗이라고 한다.
+ 2. 피벗 앞에는 피벗보다 값이 작은 모든 원소들이 오고, 피벗 뒤에는 피벗보다 값이 큰 모든 원소들이 오도록 피벗을 기준으로 리스트를 둘로 나눈다. 이렇게 리스트를 둘로 나누는 것을 분할이라고 한다. 분할을 마친 뒤에 피벗은 더 이상 움직이지 않는다.
+ 3. 분할된 두 개의 작은 리스트에 대해 재귀(Recursion)적으로 이 과정을 반복한다. 재귀는 리스트의 크기가 0이나 1이 될 때까지 반복된다.
+
+
+재귀 호출이 한번 진행될 때마다 최소한 하나의 원소는 최종적으로 위치가 정해지므로, 이 알고리즘은 반드시 끝난다는 것을 보장할 수 있다.
 
    ![Quick Sort](http://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
-  **figure 3. Quick Sort*
+   **figure 3. Quick Sort*
 
+ 
+ (출처 : https://ko.wikipedia.org)
  
  
  ## 📌 정렬 알고리즘 비교
  
-| Algorithm | In-Place | Stable | Comparison | Complexity |
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Bubble	| ○	| ○	| ○	| O(n2) | 
-| Selection	| ○	| ○	| ○	| O(n2) | 
-| Insertion	| ○	| ○	| ○	| O(n2) | 
-| Shell| 	○	| ○	| ○	| O(n2) | 
-| Merge	| ×	| ○	| ○	| O(nlogn) | 
-| Heap	| ○	| ×	| ○	| O(nlogn) | 
-| Quick	| ○	| ×	| ○	| O(nlogn) | 
-| Counting	| ×	| ○	| ×	| O(n+k) | 
-| Radix	| ×	| ○	| ×	| d×O(n) | 
-| Bucket	| ×	| ○	| -	| O(n) | 
+    [![Visualization and Comparison of Sorting Algorithms](https://github.com/kbm0996/Sort/blob/master/picture/videothumbnail.JPG?raw=true)](https://youtu.be/ZZuD6iUe3Pc?t=0s)
 
-**table 1. Comparison of Sorting Algorithms* (출처:https://ratsgo.github.io)
+  **video 1. Visualization and Comparison of Sorting Algorithms (image click!)*
+
+ 
+ 
+ | Algorithm | In-Place | Stable | Comparison | Complexity |
+ |:--------:|:--------:|:--------:|:--------:|:--------:|
+ | Bubble	| ○	| ○	| ○	| O(n2) | 
+ | Selection	| ○	| ○	| ○	| O(n2) | 
+ | Insertion	| ○	| ○	| ○	| O(n2) | 
+ | Shell| 	○	| ○	| ○	| O(n2) | 
+ | Merge	| ×	| ○	| ○	| O(nlogn) | 
+ | Heap	| ○	| ×	| ○	| O(nlogn) | 
+ | Quick	| ○	| ×	| ○	| O(nlogn) | 
+ | Counting	| ×	| ○	| ×	| O(n+k) | 
+ | Radix	| ×	| ○	| ×	| d×O(n) | 
+ | Bucket	| ×	| ○	| -	| O(n) | 
+
+ **table 1. Comparison of Sorting Algorithms* (출처 : https://ratsgo.github.io)
 
 - In-Place : 입력리스트 내부에서 정렬이 이뤄지는 것. 반대는 정렬 도중에 별도 저장공간이 필요한 것
 
@@ -53,8 +113,3 @@
 
 - Comparison : 값을 비교하며 정렬하는 것. 계산복잡성의 하한은 O(n log n)
 
-
-
-   [![Visualization and Comparison of Sorting Algorithms](https://i.ytimg.com/an_webp/ZZuD6iUe3Pc/mqdefault_6s.webp?du=3000&sqp=COmsmeEF&rs=AOn4CLDVY2uN_4TqXGm8unzq7jhX6j9tdg)](https://youtu.be/ZZuD6iUe3Pc?t=0s)
-
-  **video 1. Visualization and Comparison of Sorting Algorithms (image click!)*
