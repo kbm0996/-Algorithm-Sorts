@@ -8,6 +8,10 @@
  
  (출처 : https://ko.wikipedia.org)
  
+  ![Program](https://github.com/kbm0996/Sort/blob/master/picture/sort.jpg?raw=true)
+
+ **figure 1. Program*
+ 
  
  ## 🅿 주요 소스 코드
  ### 1. 버블 정렬 
@@ -41,7 +45,7 @@
         
     ![Insertion Sort](https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif)
 
-    **figure 1. Bubble Sort*
+    **figure 2. Bubble Sort*
 
 
  ### 2. 삽입 정렬 
@@ -58,7 +62,7 @@
  
    ![Insertion Sort](http://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
 
-   **figure 2. Insertion Sort*
+   **figure 3. Insertion Sort*
 
 
  ### 3. 퀵 정렬 
@@ -73,7 +77,7 @@
 
    ![Quick Sort](http://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
-   **figure 3. Quick Sort*
+   **figure 4. Quick Sort*
 
  
  (출처 : https://ko.wikipedia.org)
