@@ -8,6 +8,8 @@
  
  (출처 : https://ko.wikipedia.org)
  
+ 현존하는 컴퓨터 아키텍처 상에서 비교 연산자를 이용하여 구현된 정렬 알고리즘 중 가장 고성능인 알고리즘이 퀵정렬이다. 단 데이터에 접근하는 시간이 오래 걸리는 외부 기억장소에서 직접 정렬을 수행할 경우에는 병합 정렬이 더 빠른 것으로 알려져 있다
+ 
   ![Program](https://github.com/kbm0996/Sort/blob/master/picture/sort.jpg?raw=true)
 
  **figure 1. Program*
